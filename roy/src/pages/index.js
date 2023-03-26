@@ -48,7 +48,7 @@ export default function Home({ postData, tagsData }) {
     <>
       <Head />
       <Header />
-      <main className="p-4 md:px-12">
+      <main className="p-4 md:px-12 max-w-[1400px] mx-auto">
         <Tags
           tags={tags}
           activeTag={tag}

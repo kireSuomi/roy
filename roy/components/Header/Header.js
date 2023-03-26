@@ -3,7 +3,7 @@ import Link from "next/link";
 import SVG_LOGO from "../../public/logo.svg";
 export default function Header() {
   return (
-    <header className="flex justify-between  p-4 md:px-12">
+    <header className="flex justify-between p-4 md:px-12 max-w-[1400px] mx-auto">
       <Image src={SVG_LOGO} />
       <Link
         className="bg-black text-lg text-white px-8 py-4 rounded-full"
