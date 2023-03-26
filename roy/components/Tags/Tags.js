@@ -17,18 +17,17 @@ export default function Tags({ tags, activeTag, onTagClick }) {
             key={t}
             onClick={(e) => {
               onTagClick(t);
-              const container = e.target.parentElement;
+              const list = e.target.parentElement;
               const item = e.target;
-              const distance =
-                item.offsetLeft -
-                container.offsetWidth / 2 +
-                item.offsetWidth / 2;
 
-              // Animate the scroll position to the calculated distance
-              container.scrollTo({
-                left: distance,
-                behavior: "smooth",
-              });
+              const containerCenter =
+                list.getBoundingClientRect().left + list.offsetWidth / 2;
+              const itemCenter =
+                item.getBoundingClientRect().left + item.offsetWidth / 2;
+
+              const distance = itemCenter - containerCenter;
+
+              list.scrollLeft += distance;
             }}
             className={activeTag === t ? activeClass : "whitespace-pre"}
           >
