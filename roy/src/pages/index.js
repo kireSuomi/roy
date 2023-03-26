@@ -11,7 +11,7 @@ export default function Home({ postData, tagsData }) {
   const [loading, setLoading] = useState(false);
 
   const [tags, setTags] = useState(tagsData);
-  const [tag, setTag] = useState(undefined);
+  const [activeTag, setTag] = useState(undefined);
 
   const [posts, setPosts] = useState(postData);
 
@@ -51,12 +51,12 @@ export default function Home({ postData, tagsData }) {
       <main className="p-4 md:px-12 max-w-[1400px] mx-auto">
         <Tags
           tags={tags}
-          activeTag={tag}
+          activeTag={activeTag}
           onTagClick={(t) => {
             setTag(t);
           }}
         />
-        <Posts activeTag={tag} posts={posts} />
+        <Posts activeTag={activeTag} posts={posts} />
         <button
           onClick={onLoadMore}
           className="mx-auto block my-8 bg-black text-lg text-white px-8 py-4 rounded-full"
